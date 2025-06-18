@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import RouteInput from './RouteInput';
 import { getSmartSuggestion } from '../utils/predictions';
 import { fetchRealTimeTraffic } from '../utils/trafficAPI';
-import '../styles/glass.css';
+
 
 const Home = () => {
   const [time, setTime] = useState(new Date());
@@ -27,13 +27,13 @@ const Home = () => {
   }, [origin, destination, time]);
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-6 text-white">
-        <div className="glass-card p-4 text-center">
-          <h2 className="text-3xl font-bold glass-heading tracking-wide mb-2">🕒 Time Now</h2>
-          <p className="text-xl font-mono animate-pulse">{time.toLocaleTimeString()}</p>
+    <div className="w-full max-w-md mx-auto space-y-6 text-gray-800">
+        <div className="bg-white rounded shadow p-4 text-center">
+          <h2 className="text-3xl font-semibold mb-2">🕒 Time Now</h2>
+          <p className="text-xl font-mono">{time.toLocaleTimeString()}</p>
         </div>
 
-        <div className="glass-card p-4">
+        <div className="bg-white rounded shadow p-4">
           <RouteInput
             origin={origin}
             destination={destination}
@@ -42,17 +42,17 @@ const Home = () => {
           />
         </div>
 
-        <div className="glass-card p-4 text-center">
-          <p className="text-md text-blue-100 uppercase">Estimated Travel Time</p>
+        <div className="bg-white rounded shadow p-4 text-center">
+          <p className="text-md text-gray-600 uppercase">Estimated Travel Time</p>
           <p className="text-2xl font-semibold">{duration || 'Loading...'}</p>
         </div>
 
-        <div className="glass-card p-4 text-center">
-          <p className="text-md text-blue-100 uppercase">Traffic Suggestion</p>
+        <div className="bg-white rounded shadow p-4 text-center">
+          <p className="text-md text-gray-600 uppercase">Traffic Suggestion</p>
           <p className="text-lg font-medium">{suggestion}</p>
         </div>
 
-        <p className="text-xs text-center text-white/70 italic">Powered by TomTom Traffic API | Made by Pat Kyu</p>
+        <p className="text-xs text-center text-gray-500 italic">Powered by TomTom Traffic API | Made by Pat Kyu</p>
     </div>
   );
 };
