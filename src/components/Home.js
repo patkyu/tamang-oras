@@ -27,8 +27,7 @@ const Home = () => {
   }, [origin, destination, time]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-200 to-blue-400 flex items-center justify-center px-4 py-8">
-      <div className="w-full max-w-md space-y-6 text-white">
+    <div className="w-full max-w-md mx-auto space-y-6 text-white">
         <div className="glass-card p-4 text-center">
           <h2 className="text-3xl font-bold glass-heading tracking-wide mb-2">🕒 Time Now</h2>
           <p className="text-xl font-mono animate-pulse">{time.toLocaleTimeString()}</p>
@@ -54,7 +53,6 @@ const Home = () => {
         </div>
 
         <p className="text-xs text-center text-white/70 italic">Powered by TomTom Traffic API | Made by Pat Kyu</p>
-      </div>
     </div>
   );
 };
