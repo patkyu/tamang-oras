@@ -1,0 +1,19 @@
+/* src/styles/glass.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input {
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  border-color: #3b82f6;
+  background-color: rgba(255, 255, 255, 0.2);
+}
